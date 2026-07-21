@@ -21,7 +21,7 @@ const CTA = () => {
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:info@hpmediaconsulting.com"
+              href="#contact"
               className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-body font-semibold text-sm uppercase tracking-wider hover:bg-accent transition-colors"
             >
               Get in Touch

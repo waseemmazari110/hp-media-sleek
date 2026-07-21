@@ -68,7 +68,7 @@ const LogoRow = ({ logos, label }: { logos: string[]; label: string }) => (
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-24 md:py-32 bg-surface-cool">
+    <section id="clients" className="py-24 md:py-32 bg-surface-cool">
       <div className="container mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -79,7 +79,7 @@ const Testimonials = () => {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <p className="text-primary font-body font-semibold text-sm uppercase tracking-widest mb-3">
-            Testimonials
+            Clients
           </p>
           <h2 className="font-heading text-3xl md:text-5xl text-foreground leading-tight">
             Trusted by Publishers&nbsp;Worldwide
