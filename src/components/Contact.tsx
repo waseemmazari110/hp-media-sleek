@@ -2,14 +2,11 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
-// ── EmailJS Config ──────────────────────────────────────────────
-const EMAILJS_SERVICE_ID = "service_4f1dc7z";
-const EMAILJS_TEMPLATE_ID = "template_6wz3n3e";
-const EMAILJS_PUBLIC_KEY = "gKyDq-R73iN8qSUJQ";
+// ── Resend Config ───────────────────────────────────────────────
+const RESEND_API_KEY = "re_iptZSZkH_8ccayzy8wCqKZE4qH5SWvWSH"; // Replace with your actual key
 // ────────────────────────────────────────────────────────────────
 
 const contactSchema = z.object({
@@ -20,7 +17,6 @@ const contactSchema = z.object({
 });
 
 type ContactFormValues = z.infer<typeof contactSchema>;
-
 type SubmitStatus = "idle" | "success" | "error";
 
 const Contact = () => {
@@ -47,19 +43,32 @@ const Contact = () => {
     setSubmitStatus("idle");
 
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          name: data.fullName,
-          email: data.email,
-          title: data.companyName || "N/A",
-          company_name: data.companyName || "N/A",
-          message: data.message,
-          to_email: "hpettit@hpmediaconsulting.com",
+      const response = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${RESEND_API_KEY}`,
         },
-        { publicKey: EMAILJS_PUBLIC_KEY }
-      );
+        body: JSON.stringify({
+          from: "HP Media Consulting <onboarding@resend.dev>", // Change to your verified domain later
+          to: ["hpettit@hpmediaconsulting.com"],
+          subject: `New Inquiry from ${data.fullName} (${data.companyName || "N/A"})`,
+          reply_to: data.email,
+          html: `
+            <h2>New Contact Us Message</h2>
+            <p><strong>Name:</strong> ${data.fullName}</p>
+            <p><strong>Company:</strong> ${data.companyName || "N/A"}</p>
+            <p><strong>Email:</strong> ${data.email}</p>
+            <p><strong>Message:</strong></p>
+            <p>${data.message}</p>
+          `,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send email");
+      }
+
       setSubmitStatus("success");
       reset();
     } catch {
@@ -99,88 +108,61 @@ const Contact = () => {
         >
           {/* Full Name */}
           <div className="grid gap-2">
-            <label
-              htmlFor="fullName"
-              className="font-body text-sm font-medium text-foreground"
-            >
+            <label htmlFor="fullName" className="font-body text-sm font-medium text-foreground">
               Full Name <span className="text-destructive">*</span>
             </label>
             <input
               id="fullName"
               type="text"
               placeholder="e.g. Jane Doe"
-              autoComplete="name"
-              className="flex h-11 w-full rounded-lg border border-input bg-background px-4 py-2 font-body text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex h-11 w-full rounded-lg border border-input bg-background px-4 py-2 font-body text-sm text-foreground"
               {...register("fullName")}
             />
-            {errors.fullName && (
-              <p className="text-destructive text-xs font-body">
-                {errors.fullName.message}
-              </p>
-            )}
+            {errors.fullName && <p className="text-destructive text-xs">{errors.fullName.message}</p>}
           </div>
 
-          {/* Business / Company Name */}
+          {/* Company Name */}
           <div className="grid gap-2">
-            <label
-              htmlFor="companyName"
-              className="font-body text-sm font-medium text-foreground"
-            >
+            <label htmlFor="companyName" className="font-body text-sm font-medium text-foreground">
               Business / Company Name
             </label>
             <input
               id="companyName"
               type="text"
               placeholder="e.g. Acme Publishing Ltd."
-              autoComplete="organization"
-              className="flex h-11 w-full rounded-lg border border-input bg-background px-4 py-2 font-body text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex h-11 w-full rounded-lg border border-input bg-background px-4 py-2 font-body text-sm text-foreground"
               {...register("companyName")}
             />
           </div>
 
           {/* Email */}
           <div className="grid gap-2">
-            <label
-              htmlFor="email"
-              className="font-body text-sm font-medium text-foreground"
-            >
+            <label htmlFor="email" className="font-body text-sm font-medium text-foreground">
               Email Address <span className="text-destructive">*</span>
             </label>
             <input
               id="email"
               type="email"
               placeholder="you@company.com"
-              autoComplete="email"
-              className="flex h-11 w-full rounded-lg border border-input bg-background px-4 py-2 font-body text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex h-11 w-full rounded-lg border border-input bg-background px-4 py-2 font-body text-sm text-foreground"
               {...register("email")}
             />
-            {errors.email && (
-              <p className="text-destructive text-xs font-body">
-                {errors.email.message}
-              </p>
-            )}
+            {errors.email && <p className="text-destructive text-xs">{errors.email.message}</p>}
           </div>
 
           {/* Message */}
           <div className="grid gap-2">
-            <label
-              htmlFor="message"
-              className="font-body text-sm font-medium text-foreground"
-            >
+            <label htmlFor="message" className="font-body text-sm font-medium text-foreground">
               Message / Inquiry Details <span className="text-destructive">*</span>
             </label>
             <textarea
               id="message"
               rows={5}
-              placeholder="Tell us about your publishing business, the type of content you produce, or what kind of syndication and licensing opportunities you're looking for…"
-              className="flex w-full rounded-lg border border-input bg-background px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 resize-none"
+              placeholder="Tell us about your publishing business..."
+              className="flex w-full rounded-lg border border-input bg-background px-4 py-3 font-body text-sm text-foreground resize-none"
               {...register("message")}
             />
-            {errors.message && (
-              <p className="text-destructive text-xs font-body">
-                {errors.message.message}
-              </p>
-            )}
+            {errors.message && <p className="text-destructive text-xs">{errors.message.message}</p>}
           </div>
 
           {/* Submit */}
@@ -188,7 +170,7 @@ const Contact = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-lg font-body font-semibold text-sm uppercase tracking-wider hover:bg-accent transition-colors disabled:opacity-60 disabled:cursor-not-allowed w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-lg font-body font-semibold text-sm uppercase tracking-wider hover:bg-accent transition-colors disabled:opacity-60 w-full sm:w-auto"
             >
               {isSubmitting ? (
                 <>
@@ -204,33 +186,18 @@ const Contact = () => {
             </button>
           </div>
 
-          {/* Status Messages */}
           {submitStatus === "success" && (
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-2 text-sm font-body text-green-600"
-            >
+            <div className="flex items-center gap-2 text-sm text-green-600">
               <CheckCircle className="w-4 h-4 shrink-0" />
               Your message has been sent! We'll be in touch soon.
-            </motion.div>
+            </div>
           )}
 
           {submitStatus === "error" && (
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-2 text-sm font-body text-destructive"
-            >
+            <div className="flex items-center gap-2 text-sm text-destructive">
               <AlertCircle className="w-4 h-4 shrink-0" />
-              Something went wrong. Please try again or email us directly at{" "}
-              <a
-                href="mailto:hpettit@hpmediaconsulting.com"
-                className="underline underline-offset-2 hover:text-accent transition-colors"
-              >
-                hpettit@hpmediaconsulting.com
-              </a>
-            </motion.div>
+              Something went wrong. Please try again.
+            </div>
           )}
         </motion.form>
       </div>
