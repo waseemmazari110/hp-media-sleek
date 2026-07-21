@@ -51,8 +51,9 @@ const Contact = () => {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          from_name: data.fullName,
-          from_email: data.email,
+          name: data.fullName,
+          email: data.email,
+          title: data.companyName || "N/A",
           company_name: data.companyName || "N/A",
           message: data.message,
           to_email: "hpettit@hpmediaconsulting.com",
