@@ -5,56 +5,56 @@ const testimonials = [
   {
     quote:
       "Henry has priceless connections to all the relevant news aggregators and media houses. With his help we opened up additional revenue streams through cooperation, syndication and licensing that we are really excited about and that help us grow.",
-    name: "Manager",
-    role: "News.de",
+    name: "Corina Lingscheidt",
+    role: "Managing Director, News.de",
     avatar: "ND",
   },
   {
     quote:
       "We needed to rapidly build our syndication and licencing business but didn't have the expertise in-house to scale at speed, so we turned to HP Media Consulting. It was one of the best decisions we've made this year. Henry's expertise, network of contacts and calm professionalism has been invaluable, and he's helped us establish a significant new revenue stream and brought on multiple partners across the globe. I can't recommend him highly enough.",
-    name: "Commercial Director",
-    role: "GB News",
+    name: "Geoff Marsh",
+    role: "Commercial Director, GB News",
     avatar: "GB",
   },
   {
     quote:
       "I have had the pleasure of working with Henry at HP Media Consulting for the past year, and I can confidently say he is a true asset to any company looking to syndicate their content. His extensive connections, coupled with his considerable experience, has resulted in content distribution agreements with 7 platforms, which generates income and builds brand awareness. Henry is a clear, concise communicator who kept us informed throughout the process, and his dedication to our success went above and beyond expectations. I wouldn't hesitate to recommend HP Media to anyone looking for a top-notch distribution consultant.",
-    name: "Director of Content Services",
+    name: "Matt Grossman",
     role: "Barchart.com",
     avatar: "BC",
   },
   {
     quote:
       "We are very happy with the cooperation with HP Media Consulting. Together we were able to expand the reach of our special interest platforms and monetize them excellently. We look forward to further successes together.",
-    name: "CEO",
+    name: "Sven Scheffler",
     role: "Str\u00f6er Media Brands",
     avatar: "SM",
   },
   {
     quote:
       "HP Media Consulting has been an integral part of City AM's growth story - Henry has been pivotal in helping City AM navigate the ecosystem of off-site content. He is adept at bringing new opportunities to us in an evolving media landscape - I would highly recommend working with Henry.",
-    name: "CEO",
-    role: "City AM",
+    name: "Harry Owen",
+    role: "CEO, City AM",
     avatar: "CA",
   },
   {
     quote:
       "Thanks to Henry's HP Media Consulting help we have closed syndication deals with some of the biggest names in the business such as Bloomberg and MSN.com, which has become a major part of IntelliNews' revenues. HP Media Consulting has become a major ally and key part of our growth strategy as new deals are always in the works.",
-    name: "Owner",
+    name: "Ben Aris",
     role: "IntelliNews",
     avatar: "IN",
   },
   {
     quote:
       "Henry and HP Media Consulting have been an invaluable partner for us, helping us achieve something sorely needed during a full-scale war - that of getting Ukrainian voices to Western audiences. His advice and effort on our behalf have been critical to our success as a Ukrainian media company entering the global market, and we look forward to continuing that partnership.",
-    name: "Managing Editor",
+    name: "Roman Koktriatski",
     role: "The New Voice of Ukraine",
     avatar: "NV",
   },
   {
     quote:
       "Henry played a pivotal role in getting Kyiv Independent's journalism to be seen by millions of people worldwide via partnerships with news aggregators. We rely on his guidance and advice to stay competitive and relevant in news syndication.",
-    name: "COO",
+    name: "Zakhar Protsiuk",
     role: "Kyiv Independent",
     avatar: "KI",
   },
