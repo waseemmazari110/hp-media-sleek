@@ -4,24 +4,59 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "HP Media Consulting transformed our syndication strategy. Within months, we had deals with platforms we'd been trying to reach for years.",
-    name: "Sarah Mitchell",
-    role: "Head of Digital, The Bristol Post",
+      "Henry has priceless connections to all the relevant news aggregators and media houses. With his help we opened up additional revenue streams through cooperation, syndication and licensing that we are really excited about and that help us grow.",
+    name: "Manager",
+    role: "News.de",
+    avatar: "ND",
+  },
+  {
+    quote:
+      "We needed to rapidly build our syndication and licencing business but didn't have the expertise in-house to scale at speed, so we turned to HP Media Consulting. It was one of the best decisions we've made this year. Henry's expertise, network of contacts and calm professionalism has been invaluable, and he's helped us establish a significant new revenue stream and brought on multiple partners across the globe. I can't recommend him highly enough.",
+    name: "Commercial Director",
+    role: "GB News",
+    avatar: "GB",
+  },
+  {
+    quote:
+      "I have had the pleasure of working with Henry at HP Media Consulting for the past year, and I can confidently say he is a true asset to any company looking to syndicate their content. His extensive connections, coupled with his considerable experience, has resulted in content distribution agreements with 7 platforms, which generates income and builds brand awareness. Henry is a clear, concise communicator who kept us informed throughout the process, and his dedication to our success went above and beyond expectations. I wouldn't hesitate to recommend HP Media to anyone looking for a top-notch distribution consultant.",
+    name: "Director of Content Services",
+    role: "Barchart.com",
+    avatar: "BC",
+  },
+  {
+    quote:
+      "We are very happy with the cooperation with HP Media Consulting. Together we were able to expand the reach of our special interest platforms and monetize them excellently. We look forward to further successes together.",
+    name: "CEO",
+    role: "Str\u00f6er Media Brands",
     avatar: "SM",
   },
   {
     quote:
-      "Their deep knowledge of the licensing landscape and warm introductions to key decision-makers made all the difference for our newsroom.",
-    name: "James Harrington",
-    role: "Managing Editor, City Wire Media",
-    avatar: "JH",
+      "HP Media Consulting has been an integral part of City AM's growth story - Henry has been pivotal in helping City AM navigate the ecosystem of off-site content. He is adept at bringing new opportunities to us in an evolving media landscape - I would highly recommend working with Henry.",
+    name: "CEO",
+    role: "City AM",
+    avatar: "CA",
   },
   {
     quote:
-      "We saw a 40% increase in syndication revenue in the first year. HP Media truly understands what publishers need.",
-    name: "Maria Santos",
-    role: "CEO, Lisbon Gazette Group",
-    avatar: "MS",
+      "Thanks to Henry's HP Media Consulting help we have closed syndication deals with some of the biggest names in the business such as Bloomberg and MSN.com, which has become a major part of IntelliNews' revenues. HP Media Consulting has become a major ally and key part of our growth strategy as new deals are always in the works.",
+    name: "Owner",
+    role: "IntelliNews",
+    avatar: "IN",
+  },
+  {
+    quote:
+      "Henry and HP Media Consulting have been an invaluable partner for us, helping us achieve something sorely needed during a full-scale war - that of getting Ukrainian voices to Western audiences. His advice and effort on our behalf have been critical to our success as a Ukrainian media company entering the global market, and we look forward to continuing that partnership.",
+    name: "Managing Editor",
+    role: "The New Voice of Ukraine",
+    avatar: "NV",
+  },
+  {
+    quote:
+      "Henry played a pivotal role in getting Kyiv Independent's journalism to be seen by millions of people worldwide via partnerships with news aggregators. We rely on his guidance and advice to stay competitive and relevant in news syndication.",
+    name: "COO",
+    role: "Kyiv Independent",
+    avatar: "KI",
   },
 ];
 
@@ -40,7 +75,7 @@ const publisherLogos = [
   "Jerusalem Post",
   "T-Online",
   "Watson.de",
-  "Stroer Media Group",
+  "Str\u00f6er Media Brands",
   "Redaktions Netzwerk Deutschland",
   "News.de",
   "Madsack Media",
@@ -73,16 +108,21 @@ const publisherLogos = [
   "NFL.com",
   "Rugbypass",
   "Anfield Watch",
+  "IntelliNews",
+  "The New Voice of Ukraine",
+  "plus others",
 ];
 
 const platformLogos = [
+  "Bloomberg",
+  "MSN",
+  "Factiva",
+  "Lexis Nexis",
+  "LSEG",
   "Apple News",
-  "Google News",
-  "Microsoft Start",
-  "Yahoo News",
-  "Flipboard",
-  "SmartNews",
-  "Factiva"
+  "Google",
+  "Yahoo Finance",
+  "and other licensing options",
 ];
 
 const LogoRow = ({ logos, label }: { logos: string[]; label: string }) => (
@@ -127,7 +167,7 @@ const Testimonials = () => {
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
           {testimonials.map((t, i) => (
             <motion.div
-              key={t.name}
+              key={`${t.name}-${t.role}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
