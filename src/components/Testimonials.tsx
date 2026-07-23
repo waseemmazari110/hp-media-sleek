@@ -178,7 +178,7 @@ const Testimonials = () => {
         </motion.div>
 
         {/* Testimonial cards */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
+        <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto mb-20">
           {testimonials.map((t, i) => (
             <motion.div
               key={`${t.name}-${t.role}`}
@@ -186,7 +186,7 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="bg-card rounded-2xl p-8 shadow-sm border border-border flex flex-col"
+              className="bg-card rounded-2xl p-8 shadow-sm border border-border flex flex-col w-full md:w-[calc((100%-64px)/3)]"
             >
               <Quote className="w-8 h-8 text-primary/30 mb-4 flex-shrink-0" />
               <p className="text-foreground/80 font-body text-base leading-relaxed flex-1">
