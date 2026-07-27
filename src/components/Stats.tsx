@@ -4,7 +4,7 @@ const stats = [
   { value: "100+", label: "Publishers Served" },
   { value: "30+", label: "Countries Reached" },
   { value: "25+", label: "Years Experience" },
-  { value: "£M+", label: "Revenue Generated" },
+  { value: "$15M+", label: "Revenue Generated" },
 ];
 
 const Stats = () => {
