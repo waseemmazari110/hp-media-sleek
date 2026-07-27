@@ -10,6 +10,9 @@ import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 const EMAILJS_SERVICE_ID = "service_4f1dc7z";
 const EMAILJS_TEMPLATE_ID = "template_6wz3n3e";
 const EMAILJS_PUBLIC_KEY = "gKyDq-R73iN8qSUJQ";
+// ── Make.com Webhook ────────────────────────────────────────────
+const MAKE_WEBHOOK_URL =
+  "https://hook.eu2.make.com/nk1sfxl1fpk7e1tuk87irghn2x25a3ky";
 // ────────────────────────────────────────────────────────────────
 
 const contactSchema = z.object({
@@ -47,19 +50,36 @@ const Contact = () => {
     setSubmitStatus("idle");
 
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          name: data.fullName,
-          email: data.email,
-          title: data.companyName || "N/A",
-          company_name: data.companyName || "N/A",
-          message: data.message,
-          to_email: "hpettit@hpmediaconsulting.com",
-        },
-        { publicKey: EMAILJS_PUBLIC_KEY }
-      );
+      const emailPayload = {
+        name: data.fullName,
+        email: data.email,
+        title: data.companyName || "N/A",
+        company_name: data.companyName || "N/A",
+        message: data.message,
+        to_email: "hpettit@hpmediaconsulting.com",
+      };
+
+      const webhookPayload = {
+        fullName: data.fullName,
+        companyName: data.companyName || "",
+        emailAddress: data.email,
+        message: data.message,
+      };
+
+      await Promise.all([
+        emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          emailPayload,
+          { publicKey: EMAILJS_PUBLIC_KEY }
+        ),
+        fetch(MAKE_WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(webhookPayload),
+        }),
+      ]);
+
       setSubmitStatus("success");
       reset();
     } catch {
