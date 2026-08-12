@@ -12,7 +12,7 @@ const EMAILJS_TEMPLATE_ID = "template_6wz3n3e";
 const EMAILJS_PUBLIC_KEY = "gKyDq-R73iN8qSUJQ";
 // ── Make.com Webhook ────────────────────────────────────────────
 const MAKE_WEBHOOK_URL =
-  "https://hook.eu2.make.com/nk1sfxl1fpk7e1tuk87irghn2x25a3ky";
+  "https://hook.eu1.make.com/ol4c5rjqfs831s259lfs8vxgywoms7co";
 // ────────────────────────────────────────────────────────────────
 
 const contactSchema = z.object({
