@@ -12,7 +12,7 @@ const tile = {
 
 const About = () => {
   return (
-    <section id="about" className="py-24 md:py-32 bg-background">
+    <section id="about" aria-labelledby="about-heading" className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-6 max-w-6xl">
 
         {/* ── Section Header ──────────────────────────────── */}
@@ -26,7 +26,7 @@ const About = () => {
           <p className="text-primary font-body font-semibold text-sm uppercase tracking-widest mb-3">
             About
           </p>
-          <h2 className="font-heading text-3xl md:text-5xl text-foreground">
+          <h2 id="about-heading" className="font-heading text-3xl md:text-5xl text-foreground">
             The Story Behind HP&nbsp;Media
           </h2>
         </motion.div>
@@ -64,7 +64,7 @@ const About = () => {
           </motion.div>
 
           {/* ── Tile 2: Meet Henry (photo + name) ───────────── */}
-          <motion.div
+          <motion.article
             custom={1}
             initial="hidden"
             whileInView="visible"
@@ -75,12 +75,16 @@ const About = () => {
             <div className="relative aspect-[4/5] overflow-hidden">
               <img
                 src="/Henry.jpg"
-                alt="Henry Pettit, Founder of HP Media Consulting"
+                alt="Henry Pettit, Founder and Managing Director of HP Media Consulting - Publisher licensing, syndication, and media partnerships specialist"
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+                width={400}
+                height={500}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <p className="font-heading text-xl text-white">Henry Pettit</p>
+                <h3 className="font-heading text-xl text-white">Henry Pettit</h3>
                 <p className="text-white/75 font-body text-sm mt-0.5">Founder, HP Media Consulting</p>
               </div>
             </div>
@@ -90,7 +94,7 @@ const About = () => {
                 of an international news agency. Former Head of Sales &amp; Licensing at NLA media access.
               </p>
             </div>
-          </motion.div>
+          </motion.article>
 
           {/* ── Tile 3: How We Got Here ─────────────────────── */}
           <motion.div
@@ -260,7 +264,7 @@ const About = () => {
             </p>
             <div className="mt-8">
               <a
-                href="#contact"
+                href="/#contact"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-body font-semibold text-sm uppercase tracking-wider hover:bg-accent transition-colors"
               >
                 Get in Touch

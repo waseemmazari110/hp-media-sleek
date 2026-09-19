@@ -1,12 +1,21 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
-const testimonials = [
+interface Testimonial {
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+  logo: string;
+}
+
+const testimonials: Testimonial[] = [
   {
     quote:
       "Henry has priceless connections to all the relevant news aggregators and media houses. With his help we opened up additional revenue streams through cooperation, syndication and licensing that we are really excited about and that help us grow.",
     name: "Corina Lingscheidt",
     role: "Managing Director, News.de",
+    company: "News.de",
     logo: "/news.de.png",
   },
   {
@@ -14,6 +23,7 @@ const testimonials = [
       "We needed to rapidly build our syndication and licencing business but didn't have the expertise in-house to scale at speed, so we turned to HP Media Consulting. It was one of the best decisions we've made this year. Henry's expertise, network of contacts and calm professionalism has been invaluable, and he's helped us establish a significant new revenue stream and brought on multiple partners across the globe. I can't recommend him highly enough.",
     name: "Geoff Marsh",
     role: "Commercial Director, GB News",
+    company: "GB News",
     logo: "/GB News.jpg",
   },
   {
@@ -21,13 +31,15 @@ const testimonials = [
       "I have had the pleasure of working with Henry at HP Media Consulting for the past year, and I can confidently say he is a true asset to any company looking to syndicate their content. His extensive connections, coupled with his considerable experience, has resulted in content distribution agreements with 7 platforms, which generates income and builds brand awareness. Henry is a clear, concise communicator who kept us informed throughout the process, and his dedication to our success went above and beyond expectations. I wouldn't hesitate to recommend HP Media to anyone looking for a top-notch distribution consultant.",
     name: "Matt Grossman",
     role: "Barchart.com",
+    company: "Barchart",
     logo: "/Barchart.png",
   },
   {
     quote:
       "We are very happy with the cooperation with HP Media Consulting. Together we were able to expand the reach of our special interest platforms and monetize them excellently. We look forward to further successes together.",
     name: "Sven Scheffler",
-    role: "Str\u00f6er Media Brands",
+    role: "Ströer Media Brands",
+    company: "Ströer Media Brands",
     logo: "/Stroer Media.png",
   },
   {
@@ -35,6 +47,7 @@ const testimonials = [
       "HP Media Consulting has been an integral part of City AM's growth story - Henry has been pivotal in helping City AM navigate the ecosystem of off-site content. He is adept at bringing new opportunities to us in an evolving media landscape - I would highly recommend working with Henry.",
     name: "Harry Owen",
     role: "CEO, City AM",
+    company: "City AM",
     logo: "/City AM.png",
   },
   {
@@ -42,6 +55,7 @@ const testimonials = [
       "Thanks to Henry's HP Media Consulting help we have closed syndication deals with some of the biggest names in the business such as Bloomberg and MSN.com, which has become a major part of IntelliNews' revenues. HP Media Consulting has become a major ally and key part of our growth strategy as new deals are always in the works.",
     name: "Ben Aris",
     role: "IntelliNews",
+    company: "IntelliNews",
     logo: "/intellinews.png",
   },
   {
@@ -49,6 +63,7 @@ const testimonials = [
       "Henry and HP Media Consulting have been an invaluable partner for us, helping us achieve something sorely needed during a full-scale war - that of getting Ukrainian voices to Western audiences. His advice and effort on our behalf have been critical to our success as a Ukrainian media company entering the global market, and we look forward to continuing that partnership.",
     name: "Roman Koktriatski",
     role: "The New Voice of Ukraine",
+    company: "The New Voice of Ukraine",
     logo: "/the new voice of Ukraine.png",
   },
   {
@@ -56,6 +71,7 @@ const testimonials = [
       "Henry played a pivotal role in getting Kyiv Independent's journalism to be seen by millions of people worldwide via partnerships with news aggregators. We rely on his guidance and advice to stay competitive and relevant in news syndication.",
     name: "Zakhar Protsiuk",
     role: "Kyiv Independent",
+    company: "Kyiv Independent",
     logo: "/kyiv-independent.png",
   },
 ];
@@ -75,7 +91,7 @@ const publisherLogos = [
   "Jerusalem Post",
   "T-Online",
   "Watson.de",
-  "Str\u00f6er Media Brands",
+  "Ströer Media Brands",
   "Redaktions Netzwerk Deutschland",
   "News.de",
   "Madsack Media",
@@ -118,17 +134,17 @@ const platformLogos = [
   "Moodys",
   "Smart News",
   "Newsbreak",
-  " Samsung News",
+  "Samsung News",
   "Opera News",
   "Yahoo",
-  " AOL",
-  " CCC",
+  "AOL",
+  "CCC",
   "CLA",
-  " PMG Presse Monitor",
+  "PMG Presse Monitor",
   "Cafeyn",
-  " Readly",
-  " Video Solutions",
-  " AI RAG integrations",
+  "Readly",
+  "Video Solutions",
+  "AI RAG integrations",
   "MSN",
   "Factiva",
   "Lexis Nexis",
@@ -141,9 +157,9 @@ const platformLogos = [
 
 const LogoRow = ({ logos, label }: { logos: string[]; label: string }) => (
   <div>
-    <p className="text-muted-foreground text-xs uppercase tracking-widest font-body font-semibold mb-4 text-center">
+    <h3 className="text-muted-foreground text-xs uppercase tracking-widest font-body font-semibold mb-4 text-center">
       {label}
-    </p>
+    </h3>
     <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
       {logos.map((name) => (
         <span
@@ -159,44 +175,51 @@ const LogoRow = ({ logos, label }: { logos: string[]; label: string }) => (
 
 const Testimonials = () => {
   return (
-    <section id="clients" className="py-24 md:py-32 bg-surface-cool">
+    <section id="clients" aria-labelledby="clients-heading" className="py-24 md:py-32 bg-surface-cool">
       <div className="container mx-auto px-6">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <p className="text-primary font-body font-semibold text-sm uppercase tracking-widest mb-3">
-            Clients
+            Client Testimonials
           </p>
-          <h2 className="font-heading text-3xl md:text-5xl text-foreground leading-tight">
+          <h2 id="clients-heading" className="font-heading text-3xl md:text-5xl text-foreground leading-tight">
             Trusted by Publishers&nbsp;Worldwide
           </h2>
         </motion.div>
 
-        {/* Testimonial cards */}
-        <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto mb-20">
+        {/* Testimonial semantic figures */}
+        <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto mb-20" role="list">
           {testimonials.map((t, i) => (
-            <motion.div
-              key={`${t.name}-${t.role}`}
-              initial={{ opacity: 0, y: 30 }}
+            <motion.figure
+              key={`${t.name}-${t.company}`}
+              role="listitem"
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
               className="bg-card rounded-2xl p-8 shadow-sm border border-border flex flex-col w-full md:w-[calc((100%-64px)/3)]"
             >
-              <Quote className="w-8 h-8 text-primary/30 mb-4 flex-shrink-0" />
-              <p className="text-foreground/80 font-body text-base leading-relaxed flex-1">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-              <div className="mt-6 flex items-center gap-3">
+              <Quote className="w-8 h-8 text-primary/30 mb-4 flex-shrink-0" aria-hidden="true" />
+              <blockquote className="flex-1">
+                <p className="text-foreground/80 font-body text-base leading-relaxed">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+              </blockquote>
+              <figcaption className="mt-6 flex items-center gap-3">
                 <img
                   src={t.logo}
-                  alt={t.name}
+                  alt={`${t.company} logo - Publisher content licensing and syndication client of HP Media Consulting`}
                   className="w-10 h-10 rounded-full object-contain bg-card border border-border p-0.5"
+                  loading="lazy"
+                  decoding="async"
+                  width={40}
+                  height={40}
                 />
                 <div>
                   <p className="font-body font-semibold text-foreground text-sm">
@@ -206,12 +229,12 @@ const Testimonials = () => {
                     {t.role}
                   </p>
                 </div>
-              </div>
-            </motion.div>
+              </figcaption>
+            </motion.figure>
           ))}
         </div>
 
-        {/* Logos */}
+        {/* Publisher and Platform Partners */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -219,9 +242,9 @@ const Testimonials = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="max-w-4xl mx-auto space-y-10"
         >
-          <LogoRow logos={publisherLogos} label="Publisher Partners" />
+          <LogoRow logos={publisherLogos} label="Publisher Partners Represented" />
           <div className="border-t border-border" />
-          <LogoRow logos={platformLogos} label="Platform Partners" />
+          <LogoRow logos={platformLogos} label="Syndication &amp; Licensing Platform Partners" />
         </motion.div>
       </div>
     </section>
