@@ -7,7 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 
 // Lazy-load secondary routes for optimized Mobile FCP/LCP
-const News = lazy(() => import("./components/News"));
+const News = lazy(() => import("./pages/News.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
 const queryClient = new QueryClient();
