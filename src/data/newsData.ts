@@ -136,7 +136,7 @@ export const primaryArticles: WNIPArticle[] = [
     imageLink:
       "https://whatsnewinpublishing.substack.com/p/googles-paltry-ai-payouts-reuters?utm_campaign=email-half-post&r=1pibet&utm_source=substack&utm_medium=email",
     excerpt:
-      "Google is testing its AI Contribution programme which pays out when publisher content significantly contributes to AI answers in Gemini, AI Mode, and other generative interfaces. Early results look underwhelming, with many payouts under $1,000; $60k for one tester; and $1m annually for another. For several small and midsize publishers, payments are less than 0.1% of their advertising revenue. Industry comments suggest these numbers need substantial refinement to truly sustain independent journalism moving forward. Participating newsrooms report that while formal attribution markers have improved slightly, algorithmic query citations rarely translate into reciprocal referral traffic. Independent media analysts emphasize that without a standardized valuation framework or indexed licensing floors, unilateral platform contribution models risk entrenching asymmetric power dynamics. As media companies prepare for broader agentic integration in 2026, collective bargaining agreements and direct syndication covenants remain essential to preserve editorial independence and long-term financial viability across the open web.",
+      "Google tests paying publishers for AI Overviews, but early payouts leave newsrooms questioning value. Read the full investigation.",
     readMoreUrl:
       "https://whatsnewinpublishing.substack.com/p/googles-paltry-ai-payouts-reuters?utm_campaign=email-half-post&r=1pibet&utm_source=substack&utm_medium=email",
     sourceLabel: "Continue reading at What's New in Publishing",
@@ -170,7 +170,7 @@ export const primaryArticles: WNIPArticle[] = [
     imageLink:
       "https://en.membrana.media/rewarded-campaigns?utm_source=substack_banner&utm_medium=referral%20&utm_campaign=substack_WNIP_banner",
     excerpt:
-      "Counterintuitively, Reuters’ latest paywall implementation has not only boosted subscriptions but also increased overall ad revenue. How does it work? Its advanced machine learning system takes numerous signals—such as user behavior patterns—and estimates how much advertising revenue it can make from that specific user. It then intelligently decides whether a user should even be shown a paywall based on conversion likelihood. As leadership noted, overnight the dollars started to flow. By continuously calibrating real-time engagement velocity, device telemetry, and contextual visit intent, the engine eliminates blunt binary access barriers that historically depressed programmatic yield. High-intent prospective subscribers are prompted with frictionless membership offers, while high-value advertising consumers continue browsing unimpeded, maximizing premium CPM realization. This sophisticated algorithmic balancing act dismantles the long-standing industry assumption that subscription growth must inevitably cannibalize digital display monetization, demonstrating how predictive intelligence empowers publishers to capture dual revenue upside simultaneously.",
+      "Reuters uses machine learning to balance subscriptions and ad yields, driving dual revenue gains. Explore the case study.",
     readMoreUrl:
       "https://digiday.com/media/how-reuters-dynamic-paywall-is-boosting-subscriptions-and-ads/",
     sourceLabel: "Continue reading on Digiday",
@@ -207,7 +207,7 @@ export const primaryArticles: WNIPArticle[] = [
     imageLink:
       "https://www.eventbrite.co.uk/e/mediaspace-global-changemakers-summit-2026-tickets-1998125437973?utm_source=substack&utm_medium=email",
     excerpt:
-      "Across Chartbeat's network, Google Search traffic to publishers plunged 40% between July 2025 and July 2026, with Google Discover traffic down a whopping 34%. Yet despite this steep decline, publishers’ overall pageviews barely moved. Why? Loyal readers are up 11%. The new challenge for the industry is discovery, with new casual readers down 14%. Publishers are shifting focus from volatile search traffic to direct audience retention. As search engine results pages increasingly transform into self-contained answering machines, the precariousness of algorithmic dependency has become undeniable. Forward-thinking publishing executives are actively recalibrating commercial strategies, pivoting capital expenditures into native applications, premium email newsletters, specialized audio briefings, and niche community forums. By deepening reciprocal loyalty with known audiences rather than chasing ephemeral search spikes, sustainable media brands are building resilient, monetizable relationships capable of withstanding radical platform shifts and preserving long-term journalistic autonomy in a rapidly fragmented digital media landscape.",
+      "As search referrals plunge up to 40%, direct loyal reader engagement keeps publishers resilient. Discover how newsrooms adapt.",
     readMoreUrl:
       "https://www.searchenginejournal.com/google-search-decline-publishers-chartbeat/590681/",
     sourceLabel: "Continue reading on Search Engine Journal",
@@ -243,7 +243,7 @@ export const primaryArticles: WNIPArticle[] = [
     imageAlt: "CustomerX Event Banner - The premier customer and audience experience forum",
     imageLink: "https://www.customerx.net/?utm_source=substack&utm_medium=email",
     excerpt:
-      "The next layer of content distribution will see AI agents widely used to collate, synthesize, and present content directly to readers. Think Facebook's Muse, ChatGPT's Dots, and Grok's Bot as early commercial incarnations. Florent Daudens notes this could represent the 'Spotify Moment' for news, requiring publishers to structurally optimize their content for both AI agents and human audiences alike to maintain visibility. As conversational agents interpose themselves between editorial brands and information seekers, traditional destination homepage browsing is giving way to real-time synthetic digests. This transformation demands that publishers overhaul semantic tagging, structured schema markup, and licensing contracts so that autonomous bots parse reporting accurately and preserve mandatory source citations. Rather than resisting agentic mediation, innovative newsrooms are establishing direct API syndication pipelines, ensuring their journalism serves as foundational grounding data while engineering clear conversion funnels that guide inquisitive readers back to authentic source reporting.",
+      "Autonomous AI agents are reshaping news delivery into real-time answers. Learn what this 'Spotify Moment' means for publishers.",
     readMoreUrl: "https://fdaudens.substack.com/p/everyone-wants-to-be-your-personal",
     sourceLabel: "Continue reading on Florent Daudens Substack",
     sourcePublication: "Florent Daudens Analysis",
@@ -285,7 +285,7 @@ export const specialReport: WNIPSpecialReport = {
   framework: "Next Net SAIL",
   frameworkFull: "Standards for AI Ingestion & Licensing",
   excerpt:
-    "As frontier artificial intelligence models transition from exploratory web scrapers into high-frequency reasoning engines, publishers face an existential question: how can digital newsrooms protect proprietary journalism while capturing fair commercial value? In this landmark investigation, Kirk McDonald, CEO of Sundial Media & Technology Group, outlines the Next Net SAIL (Standards for AI Ingestion & Licensing) framework. Designed to establish an institutional marketplace between independent journalism and commercial LLMs, Next Net SAIL combines cryptographic content watermarking, real-time query metering, and enforceable attribution covenants. Rather than accepting opaque, take-it-or-leave-it platform payouts, publishers deploying SAIL establish direct, auditable API conduits that meter inference usage like enterprise cloud compute. In collaboration with strategic licensing advisors like HP Media Consulting, Sundial Media is demonstrating how proactive institutional governance ensures journalism remains a compensated cornerstone of the cognitive economy.",
+    "Sundial Media CEO Kirk McDonald unveils Next Net SAIL, an institutional framework for AI rights and licensing. Read the blueprint.",
   readMoreUrl:
     "https://whatsnewinpublishing.substack.com/p/why-sundial-is-rebuilding-its-media-brands-around-creators-and-ai-rights",
   sourceLabel: "Continue reading Kirk McDonald Interview on Substack",
@@ -351,7 +351,7 @@ export const newsletterSegments: WNIPNewsletterSegment[] = [
     primaryUrl: "https://pressgazette.co.uk/publishers/broadcast/economist-video-strategy/",
     actionLabel: "Read Case Study on Press Gazette",
     summary:
-      "The Economist achieved 100M+ views for its premium video and newsletter strand 'Insider' wrapped within its £279/yr subscriber tier. Key to its runaway success: turning in-house staff reporters into recognized creator voices rather than outsourcing personality talent.",
+      "The Economist drove 100M+ views by transforming in-house reporters into recognized creators. Discover their playbook.",
     attributionContext: "UK Publisher of the Year strategy reported by Press Gazette.",
     secondaryLinks: [
       { label: "The Economist Insider Strand", url: "https://www.economist.com/insider" },
@@ -368,7 +368,7 @@ export const newsletterSegments: WNIPNewsletterSegment[] = [
     primaryUrl: "https://simonowens.substack.com/p/this-company-is-building-the-worlds-51e",
     actionLabel: "Read Analysis on Simon Owens' Substack",
     summary:
-      "Adam Ryan's Workweek pivoted from a traditional publication model to a scalable B2B community platform combining the best of trade associations, social networking, and practitioner newsletters—expanding 5x its active creator cohort.",
+      "Workweek scales a creator-driven B2B platform blending trade communities and practitioner newsletters. See how it works.",
     attributionContext: "Original media business architecture review by Simon Owens.",
     readTime: "4 min read",
   },
@@ -381,7 +381,7 @@ export const newsletterSegments: WNIPNewsletterSegment[] = [
     primaryUrl: "https://tonyuphoff.substack.com/p/what-does-it-mean-when-the-company",
     actionLabel: "Read Tony Uphoff's Analysis",
     summary:
-      "With Gartner stock down 71% from late 2024 and analyst report purchase influence dropping to 13%, generative and agentic AI is commoditizing generic summaries while vastly amplifying the value of proprietary datasets, executive communities, and live events.",
+      "Agentic AI commoditizes generic analysis, elevating proprietary data and executive networks. Read the full analysis.",
     attributionContext: "Strategic B2B market assessment by Tony Uphoff.",
     readTime: "3 min read",
   },
@@ -394,7 +394,7 @@ export const newsletterSegments: WNIPNewsletterSegment[] = [
     primaryUrl: "https://www.copyright.com/resource-library/insights/outsell-2026/",
     actionLabel: "Read Outsell Report via Copyright.com",
     summary:
-      "Outsell's 2026 benchmark reveals how LLM enterprise assistants and automated RAG scrapers have undermined the classic per-seat corporate subscription model, forcing B2B publishers to pivot toward consumption-based and token-indexed licensing.",
+      "Enterprise AI assistants upend per-seat subscriptions, forcing shifts to usage-based models. Review the findings.",
     attributionContext: "Institutional licensing research published via Copyright Clearance Center.",
     readTime: "5 min read",
   },
@@ -407,7 +407,7 @@ export const newsletterSegments: WNIPNewsletterSegment[] = [
     primaryUrl: "https://collingwood.group/the-collingwood-market-report/",
     actionLabel: "Read Collingwood Market Report",
     summary:
-      "Collingwood's Q3 2026 Market Report analyzes why media M&A transactions plunged 46%, documenting how private equity buyers have frozen valuations for publishers lacking verified first-party audience graphs and defensible AI licensing covenants.",
+      "Media M&A fell 46% as buyers discount publishers lacking AI rights covenants. Explore the market report.",
     attributionContext: "M&A advisory and publisher valuation intelligence by Collingwood Group.",
     readTime: "4 min read",
   },
@@ -420,7 +420,7 @@ export const newsletterSegments: WNIPNewsletterSegment[] = [
     primaryUrl: "https://www.lemonde.fr/culture/article/2026/09/28/quand-pangram-l-outil-qui-detecte-l-utilisation-des-ia-fait-irruption-dans-la-vie-des-editeurs_6785082_3246.html",
     actionLabel: "Read Le Monde Cultural Investigation",
     summary:
-      "A cultural flashpoint erupted across European publishing after algorithmic detector Pangram flagged a celebrated literary work as 95% synthetic, spurring urgent demands for verifiable human origin watermarks in editorial contracts.",
+      "A celebrated novel flagged as 95% synthetic ignites debate over editorial origin verifications. Read the report.",
     attributionContext: "French cultural investigation reported by Le Monde.",
     readTime: "4 min read",
   },
@@ -433,7 +433,7 @@ export const newsletterSegments: WNIPNewsletterSegment[] = [
     primaryUrl: "https://pressgazette.co.uk/news/press-gazette-launches-newsroom-tool-to-stop-ai-fakes-before-publication/",
     actionLabel: "View Tool on Press Gazette",
     summary:
-      "Press Gazette introduces an open verification framework allowing journalists and editors to audit synthetic text risks, verify photographic provenance, and issue cryptographically verifiable 'Made By Humans' badges prior to publication.",
+      "Press Gazette launches an open tool to audit synthetic content and certify human provenance. Check out the tool.",
     attributionContext: "Newsroom provenance infrastructure launched by Press Gazette.",
     readTime: "3 min read",
   },
@@ -446,7 +446,7 @@ export const newsletterSegments: WNIPNewsletterSegment[] = [
     primaryUrl: "https://medium.com/blog/mediums-state-of-writing-report-2026-a-private-writing-revival-107016e9e254",
     actionLabel: "Read Medium's Full Report",
     summary:
-      "A comprehensive survey of 1,175 writers shows 71% use AI tools, but 69% distrust other AI-written prose. Search referrals dropped 35% across Medium while AI engine citations accounted for under 0.5% of incoming traffic.",
+      "Writers adopt AI tools while distrusting AI prose as search referrals contract sharply. Read the survey findings.",
     attributionContext: "Creator economy and search erosion study by Medium.",
     readTime: "4 min read",
   },
@@ -459,7 +459,7 @@ export const newsletterSegments: WNIPNewsletterSegment[] = [
     primaryUrl: "https://whatsnewinpublishing.substack.com/p/the-readers-who-will-never-subscribe",
     actionLabel: "Read Michael Kudriavsky Interview on WNIP",
     summary:
-      "In-depth conversation with Membrana Media CEO Michael Kudriavsky on why paywalls that strictly block non-subscribers leave huge programmatic revenue on the table, and how Rewarded Campaigns monetize casual readers.",
+      "Membrana Media CEO explains how Rewarded Campaigns monetize casual readers who never subscribe. Read the interview.",
     attributionContext: "Executive sponsor spotlight presented in partnership with Membrana Media.",
     secondaryLinks: [
       {
@@ -478,7 +478,7 @@ export const newsletterSegments: WNIPNewsletterSegment[] = [
     primaryUrl: "https://whatsnewinpublishing.substack.com/p/googles-pay-for-value-a-lifeline",
     actionLabel: "Read Publisher Commentary on WNIP",
     summary:
-      "Industry leaders weigh in on Google's AI Contribution pilot. Newsroom leaders argue that without indexed baselines and transparent query counts, voluntary payouts cannot compensate for 40% drops in direct search referrals.",
+      "Publishers debate whether Google's AI payouts offset steep organic referral declines. Read industry perspectives.",
     attributionContext: "Publisher reaction analysis curated by Jez Walters.",
     secondaryLinks: [
       {
@@ -497,7 +497,7 @@ export const newsletterSegments: WNIPNewsletterSegment[] = [
     primaryUrl: "https://www.eventbrite.co.uk/e/mediaspace-global-changemakers-summit-2026-tickets-1998125437973?utm_source=substack&utm_medium=email",
     actionLabel: "Register on Eventbrite (MediaSpace Summit)",
     summary:
-      "Kinga Incze convenes 100 global senior publishing, tech, and regulatory leaders in London and online to model media business sustainability, AI copyright standards, and direct audience ownership through 2030.",
+      "Media leaders gather in London and online to shape copyright standards and audience ownership. View event details.",
     attributionContext: "Official WNIP partner event convening October 7, 2026 in London & Online.",
     readTime: "Event Brief",
   },
@@ -510,7 +510,7 @@ export const newsletterSegments: WNIPNewsletterSegment[] = [
     primaryUrl: "https://www.customerx.net/?utm_source=substack&utm_medium=email",
     actionLabel: "Access CustomerX Forum Portal",
     summary:
-      "The premier forum on optimizing user experience and audience lifetime value in an era of conversational AI agents, zero-click browsing, and personalized content delivery.",
+      "Explore audience lifetime value, agentic delivery, and zero-click retention strategies. Access the forum portal.",
     attributionContext: "Featured WNIP event partner for digital media executives.",
     readTime: "Event Brief",
   },
@@ -523,7 +523,7 @@ export const newsletterSegments: WNIPNewsletterSegment[] = [
     primaryUrl: "https://oddlyobvious.com/",
     actionLabel: "Visit Oddly Obvious",
     summary:
-      "Strategic design, digital product architecture, and user engagement frameworks engineered by Monojoy to convert casual readers into loyal brand advocates.",
+      "Strategic product design engineered to convert casual visitors into loyal brand advocates. Explore their work.",
     attributionContext: "Curated ecosystem partner acknowledged in WNIP Issue #184.",
     readTime: "Resource",
   },
@@ -536,7 +536,7 @@ export const newsletterSegments: WNIPNewsletterSegment[] = [
     primaryUrl: "https://whatsnewinpublishing.substack.com/p/googles-paltry-ai-payouts-reuters?utm_campaign=email-half-post&r=1pibet&utm_source=substack&utm_medium=email",
     actionLabel: "View Full Issue #184 on Substack",
     summary:
-      "Access Jez Walters' complete newsletter analysis, community commentary, and full publisher discussions directly on the What's New in Publishing Substack publication.",
+      "Read Jez Walters' full newsletter analysis, commentary, and publisher discussions on Substack. Read the edition.",
     attributionContext: "Original newsletter edition curated by Jez Walters.",
     secondaryLinks: [
       { label: "Jez Walters Profile", url: "https://substack.com/@jezwalters574004" },
